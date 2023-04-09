@@ -29,7 +29,7 @@ class SecondActivity: AppCompatActivity() {
         filePickerLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
             uri?.let {
 
-                val fileRef = storageRef.child("pdfs/${uri.lastPathSegment}")
+                val fileRef = storageRef.child("pdfs/Resume.pdf")
                 val uploadTask = fileRef.putFile(uri)
                 uploadTask.addOnSuccessListener {
                     Toast.makeText(this, "File uploaded successfully", Toast.LENGTH_SHORT).show()
